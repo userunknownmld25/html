@@ -15,11 +15,18 @@
 
   <script>
     function sendFile() {
+      alert("Button clicked, sending data to bot...");
       Telegram.WebApp.sendData(JSON.stringify({
         action: "send_file",
         file_url: "https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf"
       }));
     }
+    console.log("Telegram object:", Telegram);
+if (Telegram?.WebApp) {
+    alert("✅ Telegram WebApp detected");
+} else {
+    alert("❌ Not running inside Telegram");
+}
   </script>
 </body>
 </html>
