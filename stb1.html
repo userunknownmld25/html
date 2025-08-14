@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mini App File Sender</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 20px; background: #1c1c1c; color: white; }
+    button { padding: 12px 20px; font-size: 18px; background: #2ea6ff; color: white; border: none; border-radius: 8px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>📂 Get your file</h2>
+  <button onclick="sendFile()">Send File to Chat</button>
+
+  <script>
+    function sendFile() {
+      Telegram.WebApp.sendData(JSON.stringify({
+        action: "send_file",
+        file_url: "https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf"
+      }));
+    }
+  </script>
+</body>
+</html>
